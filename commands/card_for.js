@@ -17,12 +17,25 @@ module.exports = {
         let d = interaction.options.getNumber("寬_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
 
         let reply = ""; // 可以透過更改這裡的內容來決定回覆的文字
-        for (let i = 0; i < height.length; i++) {
+        let temp=10000;
+        let tmpa = 0;
+
+        for (let i=0 ; i<=4 ; i++)
+        {
+            if(a[i]*b[i]>c*d && a[i]*b[i]<temp)
+            {
+                temp=a[i]*b[i];
+                tmpa=i;
+
+            }
+             
+        }
+       
             // 還記得昨天新手篇的學習單嗎? 也許你會知道
             // 1. 如何判斷有沒有比史考特大
             // 2. 比史考特大卻又最小的牌
             //這兩個東西要如何判斷
-        }
-        await interaction.reply(`${reply}`);
+        
+        await interaction.reply(`${a[tmpa]} ${b[tmpa]}`);
     },
 };
